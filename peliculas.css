@@ -6,136 +6,175 @@ body {
     padding: 0;
 }
 
+/* ======= HEADER ======= */
 header {
-    background-color:#0d0d26;
-    padding: 10px 20px;
+    background-color: #0d0d26;
+    padding: 20px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column; /* Acomoda los elementos en columna */
     align-items: center;
-    height: 130px;
+    text-align: center;
+    height: auto; /* Ajusta la altura automáticamente */
 }
 
 header h1 {
-    color: white;
-    position: absolute;
-    left: 60px;
+    position: static;
+    text-align: center;
+    font-size: 2rem; /* Tamaño óptimo */
+    margin-bottom: 10px; /* Separa del subtítulo */
 }
 
-
-header div h3{
+header .div1 {
+    position: static;
+    text-align: center;
+    margin-top: 5px; /* Separación entre h1 y div1 */
+    font-size: 1.3rem; /* Tamaño adecuado */
+    width: 100%;
+    font-family: cursive;
     color: #00ff44;
-    font-family:cursive;
-
 }
 
-header .div1{
-   
-    position: absolute;
-    right: 800px;
-    top: 40px;
-}
-
-a{
-    color: aliceblue;
-    text-decoration: none;
-}
-
-ul{
-    list-style: none;
-    margin: 5px;
-}
+/* ======= MENÚ ======= */
 .menu {
-    
     background-color: #0d0d26;
-    width: 140px;
-    height: 200px;
+    width: 100%;
+    height: auto;
+    padding: 15px 0;
+    text-align: center;
+    margin-bottom: 40px; /* Mayor separación con el contenedor */
+}
+
+.iconosm {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
 }
 
 .iconosm li {
-    position:relative;
-    top: 40px;
-    margin-bottom: 30px; /* Espacio debajo de cada elemento */
+    list-style: none;
 }
 
-.container{
+/* ======= CONTENEDOR ======= */
+.container {
     display: grid;
-    background-color: #0d0d26;
-    grid-template-columns: repeat(6, 180px);
-    width: 1120px;
-    position: absolute;
-    left: 200px;
-    top: 160px;
-    justify-content:center;
-    justify-content:space-around;
+    grid-template-columns: repeat(6, 1fr); /* Mantiene 6 columnas en pantallas grandes */
+    gap: 10px;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    position: static;
 }
 
-.cajas{
-    width: 180px;
+.cajas {
+    width: 100%;
     height: 260px;
     background-color: aqua;
-    border: 1px solid;
-    border-color: #00ff44;
-    margin: 2px;
+    border: 1px solid #00ff44;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-footer{
-    background-color: #0d0d26;
-    height: 200px;
-    position: relative;
-    top:650px;
+/* ======= IMÁGENES ======= */
+.post {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
 }
 
-header .div2{
-    width: 750px;
-    height: 130px;
-   
-}
-
-.post{
-    width: 180px;
-    height: 260px;
-}
-
-.postb{
+.postb {
     width: 105px;
     height: 120px;
     margin-right: 1px;
     margin-top: 1px;
-    border: 1px solid;
-    border-color: #00ff44;
+    border: 2px solid #00ff44;
 }
 
-.footer-content{
+/* ======= MARQUEE (EXTRENOS RECIENTES) ======= */
+.div2 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-top: 15px; /* Mayor separación con h1 */
+}
+
+.div2 marquee {
+    width: 80%;
+    max-width: 800px;
+}
+
+/* ======= FOOTER ======= */
+footer {
+    background-color: #0d0d26;
+    padding: 20px 10px;
+    text-align: center;
+    position: static;
+    margin-top: 40px; /* Espacio antes del footer */
+    width: 100%;
+}
+
+.footer-content {
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
-.logo{
+.logo {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
 .logo i {
-    color: #7FFF00; /* Color verde para el ícono */
+    color: #7FFF00;
     font-size: 40px;
 }
 
 .rights {
     font-size: 12px;
     color: #ccc;
-    margin-top: 70px;
+    margin-top: 20px;
 }
 
-.logo dl {
-    position: relative;
-    top: 10px;
+/* ======= RESPONSIVE ======= */
+@media screen and (max-width: 1024px) {
+    .container {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas en tablets */
+    }
 
+    .iconosm {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .menu {
+        margin-bottom: 30px;
+    }
 }
 
-.logoh i {
-    color: #7FFF00; /* Color verde para el ícono */
-    font-size: 30px;
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .div1 {
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+
+    .div2 {
+        margin-top: 20px;
+    }
+
+    .div2 marquee {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en móviles */
+    }
 }
 
